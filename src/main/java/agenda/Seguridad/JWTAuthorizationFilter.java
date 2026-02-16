@@ -17,6 +17,8 @@ import java.util.stream.Collectors;
 
 import static agenda.Seguridad.Constans.*;
 
+
+//validamos el token de cada request
 @Component
 public class JWTAuthorizationFilter extends OncePerRequestFilter
 {

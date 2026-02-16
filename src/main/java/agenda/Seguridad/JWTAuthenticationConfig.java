@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 
 import static agenda.Seguridad.Constans.*;
 
+//generamos token
 @Configuration
 public class JWTAuthenticationConfig
 {
