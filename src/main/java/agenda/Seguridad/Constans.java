@@ -15,6 +15,9 @@ public class Constans
     public static final String USER = "aitor";
     public static final String PASSWORD = "1234";
 
+    public static final String SECRET_KEY = "1234567890123456";
+    public static final String INIT_VECTOR = "1234567890123456";
+
     //JWT
     public static final String SUPER_SECRET_KEY =
             "ZnJhc2VzbGFyZ2FzcGFyYWNvbG9jYXJjb21vY2xhdmVlbnVucHJvamVjdG9kZWVtZXBsb3BhcmFqd3Rjb25zcHJpbmdzZWN1cml0eQ";
