@@ -15,6 +15,7 @@ public class Constans
     public static final String USER = "aitor";
     public static final String PASSWORD = "1234";
 
+    //5.5
     public static final String SECRET_KEY = "1234567890123456";
     public static final String INIT_VECTOR = "1234567890123456";
 
