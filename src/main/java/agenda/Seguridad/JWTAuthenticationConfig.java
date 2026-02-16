@@ -17,9 +17,10 @@ import static agenda.Seguridad.Constans.*;
 @Configuration
 public class JWTAuthenticationConfig
 {
-    public String getJWTToken(String username)
+    //modificado 5.5
+    public String getJWTToken(String username, Rol rol)
     {
-        List<GrantedAuthority> grantedAuthorities = AuthorityUtils.commaSeparatedStringToAuthorityList("ROLE_USER");
+        List<GrantedAuthority> grantedAuthorities = AuthorityUtils.commaSeparatedStringToAuthorityList("ROLE_"+rol.toString());
 
         String token = Jwts.builder()
                 .setId("agendaJWT")
