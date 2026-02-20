@@ -1,7 +1,6 @@
 package agenda;
 
 import agenda.Entidades.Contacto;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.*;
 import org.springframework.web.client.RestTemplate;

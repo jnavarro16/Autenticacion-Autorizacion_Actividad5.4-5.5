@@ -10,7 +10,7 @@ public class Constans
     //spring security
     public static final String LOGIN_URL = "/login";
     public static final String HEADER_AUTHORIZACION_KEY = "token";
-    public static final String TOKEN_BEARER_PREFIX = "Bearer";
+    public static final String TOKEN_BEARER_PREFIX = "Bearer ";
 
     public static final String USER = "aitor";
     public static final String PASSWORD = "1234";

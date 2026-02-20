@@ -21,7 +21,7 @@ public class WebSecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(authz -> authz
-                        .requestMatchers(HttpMethod.OPTIONS, Constans.LOGIN_URL).permitAll()
+                        .requestMatchers(HttpMethod.POST, Constans.LOGIN_URL).permitAll()
                         .anyRequest().authenticated()
                 )
                 .addFilterAfter(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class);

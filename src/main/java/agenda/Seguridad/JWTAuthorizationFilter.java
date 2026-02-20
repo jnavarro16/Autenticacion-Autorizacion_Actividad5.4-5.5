@@ -22,14 +22,17 @@ import static agenda.Seguridad.Constans.*;
 @Component
 public class JWTAuthorizationFilter extends OncePerRequestFilter
 {
-    private Claims setSigningKey(HttpServletRequest request) {
-        String jwtToken = request.getHeader(HEADER_AUTHORIZACION_KEY)
-                .replace(HEADER_AUTHORIZACION_KEY, "");
+    private Claims setSigningKey(HttpServletRequest request)
+    {
+        String header = request.getHeader(HEADER_AUTHORIZACION_KEY);
+
+        String jwtToken = header.replace(TOKEN_BEARER_PREFIX, "").trim();
 
         return Jwts.parserBuilder()
                 .setSigningKey(getSigningKey(SUPER_SECRET_KEY))
                 .build()
-                .parseClaimsJws(jwtToken).getBody();
+                .parseClaimsJws(jwtToken)
+                .getBody();
     }
 
     private void setAuthentication(Claims claims) {
@@ -49,7 +52,7 @@ public class JWTAuthorizationFilter extends OncePerRequestFilter
 
     private boolean isJWTValid(HttpServletRequest request) {
         String authenticationHeader = request.getHeader(HEADER_AUTHORIZACION_KEY);
-        return authenticationHeader != null && authenticationHeader.startsWith(HEADER_AUTHORIZACION_KEY);
+        return authenticationHeader != null && authenticationHeader.startsWith(TOKEN_BEARER_PREFIX);
     }
 
     @Override
