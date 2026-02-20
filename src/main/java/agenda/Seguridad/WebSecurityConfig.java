@@ -20,7 +20,7 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain configure(HttpSecurity http) throws Exception {
         http
-                .csrf(AbstractHttpConfigurer::disable)
+                .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(authz -> authz
                         .requestMatchers(HttpMethod.POST, Constans.LOGIN_URL).permitAll()
                         .requestMatchers(HttpMethod.DELETE, "/contactos/**").hasAuthority("ROLE_ADMIN")
